@@ -3,4 +3,4 @@ import { createNoteCtrl } from '../controller/noteCtrl.js';
 
 export const noteRouter = express.Router();
 
-noteRouter('/createNote', createNoteCtrl)
+noteRouter.post('/createNote', createNoteCtrl)
