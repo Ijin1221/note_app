@@ -52,7 +52,7 @@ export const deleteNoteMdl = async (details) => {
 export const listNoteByIdMdl = async (details) => {
   const connection = await pool.getConnection();
   try {
-    const [notes] = await connection.query(`SELECT id, title, content FROM notes WHERE userId = ?`, [details.userId]);
+    const [notes] = await connection.query(`SELECT userId, title, content FROM notes WHERE userId = ?`, [details.userId]);
     if (!notes.length) {
       return { sts : "success", data: "No notes created yet"};
     } else {
