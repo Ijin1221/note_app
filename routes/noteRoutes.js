@@ -4,5 +4,5 @@ import { createNoteCtrl, deleteNoteCtrl, listNoteByIdCtrl } from '../controller/
 export const noteRouter = express.Router();
 
 noteRouter.post('/createNote', createNoteCtrl);
-noteRouter.post('/deleteNote', deleteNoteCtrl);
+noteRouter.delete('/deleteNote', deleteNoteCtrl);
 noteRouter.get('/listNote', listNoteByIdCtrl);

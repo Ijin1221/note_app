@@ -27,16 +27,16 @@ export const registerUserMdl = async (details) => {
 export const userLoginMdl = async (details) => {
   const connection = await pool.getConnection();
   try {
-    const [isUserExist] = await connection.query(`SELECT id, name, password FROM users WHERE id = ?`, [details.id]);
+    const [isUserExist] = await connection.query(`SELECT id, name, pwd FROM users WHERE name = ?`, [details.name]);
     if (!isUserExist.length) {
       return "userNotExist";
     };
 
-    if (isUserExist[0].name != details.name) {
+    if (isUserExist[0]?.name != details.name) {
       return "wrngUsr";
     };
 
-    if (isUserExist[0].pwd != details.pwd) {
+    if (isUserExist[0]?.pwd != details.pwd) {
       return "wrngPwd"
     }
 

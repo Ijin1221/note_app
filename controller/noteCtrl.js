@@ -14,7 +14,7 @@ export const createNoteCtrl = async (req, res) => {
 };
 
 export const deleteNoteCtrl = async (req, res) => {
-  const { userId, noteId } = req.body;
+  const { userId, noteId } = req.query;
   const details = { userId, noteId };
 
   const result = await deleteNoteMdl(details);

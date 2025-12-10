@@ -1,4 +1,4 @@
-import { pool } from "../config/dbConfig";
+import { pool } from "../config/dbConfig.js";
 
 export const createNoteMdl = async (details) => {
   const connection = await pool.getConnection();

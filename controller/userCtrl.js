@@ -12,8 +12,8 @@ export const registerUserCtrl = async (req, res) => {
 };
 
 export const userLoginCtrl = async (req, res) => {
-  const { id, name, pwd } = req.body;
-  const details = { id, name, pwd };
+  const { name, pwd } = req.body;
+  const details = { name, pwd };
   const result = await userLoginMdl(details);
 
   if ( result === "userNotExist" ) return res.status(400).send({message: "This user is not exist"});
